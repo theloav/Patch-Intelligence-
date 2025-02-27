@@ -1,0 +1,22 @@
+2025-02-27 22:16:59,451 - INFO - Testing get_npm_package_info...
+2025-02-27 22:16:59,451 - DEBUG - Entering get_npm_package_info with: express
+2025-02-27 22:16:59,452 - DEBUG - Starting new HTTPS connection (1): registry.npmjs.org:443
+2025-02-27 22:16:59,796 - DEBUG - https://registry.npmjs.org:443 "GET /express HTTP/1.1" 200 None
+2025-02-27 22:16:59,813 - DEBUG - get_npm_package_info: Received data: dict_keys(['_id', '_rev', 'name', 'dist-tags', 'versions', 'time', 'bugs', 'author', 'license', 'homepage', 'keywords', 'repository', 'description', 'contributors', 'maintainers', 'readme', 'readmeFilename', 'users'])
+2025-02-27 22:16:59,813 - DEBUG - Exiting get_npm_package_info
+2025-02-27 22:16:59,813 - INFO - get_npm_package_info successful.  Keys: dict_keys(['_id', '_rev', 'name', 'dist-tags', 'versions', 'time', 'bugs', 'author', 'license', 'homepage', 'keywords', 'repository', 'description', 'contributors', 'maintainers', 'readme', 'readmeFilename', 'users'])
+2025-02-27 22:16:59,813 - INFO - Testing generate_cpe and get_cve_data...
+2025-02-27 22:16:59,813 - INFO - Generated CPE: cpe:2.3:a:npmjs:express:4.17.1:*:*:*:*:node.js:*:*
+2025-02-27 22:16:59,813 - DEBUG - Entering get_cve_data with: cpe:2.3:a:npmjs:express:4.17.1:*:*:*:*:node.js:*:*
+2025-02-27 22:16:59,813 - DEBUG - get_cve_data: Loop count: 1
+2025-02-27 22:16:59,813 - DEBUG - get_cve_data: Before requests.get
+2025-02-27 22:16:59,813 - DEBUG - Starting new HTTPS connection (1): services.nvd.nist.gov:443
+2025-02-27 22:17:01,093 - DEBUG - https://services.nvd.nist.gov:443 "GET /rest/json/cves/2.0?cpeName=cpe%3A2.3%3Aa%3Anpmjs%3Aexpress%3A4.17.1%3A%2A%3A%2A%3A%2A%3A%2A%3Anode.js%3A%2A%3A%2A&resultsPerPage=20&startIndex=0 HTTP/1.1" 200 146
+2025-02-27 22:17:01,093 - DEBUG - get_cve_data: After requests.get
+2025-02-27 22:17:01,093 - DEBUG - get_cve_data: Before response.json()
+2025-02-27 22:17:01,093 - DEBUG - Successfully decoded JSON from NVD. Keys: dict_keys(['resultsPerPage', 'startIndex', 'totalResults', 'format', 'version', 'timestamp', 'vulnerabilities'])
+2025-02-27 22:17:01,093 - DEBUG - get_cve_data: After response.json()
+2025-02-27 22:17:01,093 - DEBUG - get_cve_data: 'vulnerabilities' key found
+2025-02-27 22:17:01,093 - DEBUG - Total results: 0, startIndex: 0, resultsPerPage: 20
+2025-02-27 22:17:01,093 - DEBUG - get_cve_data: Breaking loop (total_results <= startIndex + resultsPerPage)
+2025-02-27 22:17:01,093 - ERROR - get_cve_data failed.
